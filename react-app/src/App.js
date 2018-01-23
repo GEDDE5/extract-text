@@ -1,20 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+
+import SubmitButton from './components/SubmitButton'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <form className='upload-form' enctype="multipart/form-data">
+          <div className='form-group'>
+            <label>Title</label>
+            <input name='title' />
+          </div>
+          <div className='form-group'>
+            <label>Document</label>
+            <input name="document" type="file" accept='.doc, .docx' />
+          </div>
+          <div className='form-group' style={{ 'margin-bottom': 0 }}>
+            <SubmitButton />
+          </div>
+        </form>
       </div>
-    );
+    )
   }
 }
 
